@@ -4,11 +4,10 @@
     state: installed
     disable_grp_check: yes
 
-#- name: remi repo install
-#  ansible.builtin.dnf:
-#    name: "@redis:remi-6.2"
-#    state: installed
-#    disable_grp_check: yes
+- name: remi repo install
+  ansible.builtin.dnf:
+    name: "@redis:remi-6.2"
+    state: installed
 
 - name: replace the ip
   ansible.builtin.replace:

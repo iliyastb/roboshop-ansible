@@ -14,7 +14,7 @@
 - name: start mysql
   ansible.builtin.systemd:
     name: mysqld
-    state: started
+    state: restarted
     enabled: yes
 
 - name: set pass

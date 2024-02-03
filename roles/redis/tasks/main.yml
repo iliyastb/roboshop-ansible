@@ -2,7 +2,7 @@
   ansible.builtin.yum:
     name: "@redis:remi-6.2"
     state: installed
-    disable_grp_check: yes
+    #disable_grp_check: yes
 
 - name: replace the ip
   ansible.builtin.replace:

@@ -1,5 +1,5 @@
 - name: install repo
-  ansible.builtin.shell: https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh, https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh
+  ansible.builtin.shell: https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh
 
 - name: install rabbitmq
   ansible.builtin.dnf:

@@ -1,0 +1,17 @@
+- name: remi repo install
+  ansible.builtin.dnf:
+    name: "@redis:remi-6.2"
+    state: installed
+    disable_grp_check: yes
+
+- name: replace the ip
+  ansible.builtin.replace:
+    name: /etc/redis.conf
+    regexp: 127.0.0.1
+    replace: 0.0.0.0
+
+- name: start redis
+  ansible.builtin.systemd:
+    name: redis
+    state: started
+    enabled: yes

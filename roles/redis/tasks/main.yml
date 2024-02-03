@@ -1,5 +1,5 @@
 - name: remi repo install
-  ansible.builtin.dnf:
+  ansible.builtin.yum:
     name: "@redis:remi-6.2"
     state: installed
     disable_grp_check: yes

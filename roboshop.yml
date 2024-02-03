@@ -1,4 +1,4 @@
 - name: roboshop
-  hosts: all
+  hosts: localhost
   roles:
     - "{{ role_name }}"

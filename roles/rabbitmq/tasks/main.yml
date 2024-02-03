@@ -1,6 +1,10 @@
-- name: install repo
+- name: install repo er
   ansible.builtin.shell:
-    curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash, curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
+    curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+
+- name: install repo rs
+  ansible.builtin.shell:
+    curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
 
 - name: install rabbitmq
   ansible.builtin.dnf:

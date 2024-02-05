@@ -14,5 +14,5 @@
 
 - name: download extract
   ansible.builtin.unarchive:
-    src: https://roboshop-artifacts.s3.amazonaws.com/cart.zip
+    src: "https://roboshop-artifacts.s3.amazonaws.com/cart.zip"
     dest: /app

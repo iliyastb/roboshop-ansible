@@ -19,11 +19,11 @@
   community.general.npm:
     path: /app
 
-- name: import task pre
+- name: import task sche
   ansible.builtin.import_tasks:
     file: schema-setup.yml
-    when: schema_type
+    when: schema_type is defined
 
-- name: import task pre
+- name: import task syd
   ansible.builtin.import_tasks:
     file: systemd-setup.yml

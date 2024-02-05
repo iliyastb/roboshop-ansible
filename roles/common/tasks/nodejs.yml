@@ -21,8 +21,8 @@
 
 - name: import task pre
   ansible.builtin.import_tasks:
-    file: schema-setup
-    when: schema_type.yml
+    file: schema-setup.yml
+    when: schema_type
 
 - name: import task pre
   ansible.builtin.import_tasks:

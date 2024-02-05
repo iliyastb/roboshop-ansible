@@ -1,0 +1,17 @@
+- name: install python
+  yum:
+    name: ython36 gcc python3-devel
+    state: installed
+
+- name: pre req
+  import_tasks:
+    file: app-prereq.yml
+
+- name: depen
+  pip:
+    requirements: /app/requirements.txt
+    executable: pip3.6
+
+- name: sysd
+  import_tasks:
+    file: systemd-setup.yml

@@ -12,7 +12,7 @@
     state: installed
 
 - name: import task pre
-  ansible.builtin.import_task:
+  ansible.builtin.import_tasks:
     file: app-prereq.yml
 
 - name: npm dep
@@ -20,10 +20,10 @@
     path: /app
 
 - name: import task pre
-  ansible.builtin.import_task:
+  ansible.builtin.import_tasks:
     file: schema-setup
     when: schema_type.yml
 
 - name: import task pre
-  ansible.builtin.import_task:
+  ansible.builtin.import_tasks:
     file: systemd-setup.yml

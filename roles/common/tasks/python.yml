@@ -2,14 +2,6 @@
   yum:
     name: python36, gcc, python3-devel
     state: installed
-#- name: install python
-#  yum:
-#    name: gcc
-#    state: installed
-#- name: install python
-#  yum:
-#    name: python3-devel
-#    state: installed
 
 - name: pre req
   import_tasks:

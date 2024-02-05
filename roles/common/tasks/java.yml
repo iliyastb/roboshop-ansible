@@ -1,0 +1,28 @@
+- name: install maven
+  yum:
+    name: maven
+    state: installed
+
+- name: import app pre
+  import_tasks:
+    file: app-prereq.yml
+
+- name: depen
+  shell:
+    mvn clean package
+  args:
+    chdir: /app
+
+- name: depen
+  shell:
+    mv target/shipping-1.0.jar shipping.jar
+  args:
+    chdir: /app
+
+- name: schema
+  import_tasks:
+    file: schema-setup.yml
+
+- name: sysd
+  import_tasks:
+    file: systemd-setup.yml

@@ -1,6 +1,14 @@
 - name: install python
   yum:
-    name: ython36 gcc python3-devel
+    name: ython36
+    state: installed
+- name: install python
+  yum:
+    name: gcc
+    state: installed
+- name: install python
+  yum:
+    name: python3-devel
     state: installed
 
 - name: pre req

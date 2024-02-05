@@ -13,8 +13,7 @@
 
 - name: import task pre
   ansible.builtin.import_task:
-    name: common
-    tasks_from: app-prereq
+    file: app-prereq.yml
 
 - name: npm dep
   community.general.npm:
@@ -22,11 +21,9 @@
 
 - name: import task pre
   ansible.builtin.import_task:
-    name: common
-    tasks_from: schema-setup
-    when: schema_type
+    file: schema-setup
+    when: schema_type.yml
 
 - name: import task pre
   ansible.builtin.import_task:
-    name: common
-    tasks_from: systemd-setup
+    file: systemd-setup.yml

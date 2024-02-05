@@ -7,7 +7,7 @@
         dest: /etc/yum.repos.d
 
     - name: install mongo
-      ansible.builtin.yum:
+      ansible.builtin.dnf:
         name: mongodb-org-shell
         state: installed
 

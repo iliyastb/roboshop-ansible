@@ -1,0 +1,30 @@
+- name: copy install when mongo
+  block:
+    - name: copy mongo
+      ansible.builtin.copy:
+        src: mongodb.repo
+        dest: /etc/yum.repos.d
+
+    - name: install mongo
+      ansible.builtin.yum:
+        name: mongodb-org-shell
+        state: installed
+
+    - name: load schema
+      ansible.builtin.shell:
+        mongo --host 0.0.0.0 </app/schema/catalogue.js
+
+  when: schema_type="mongo"
+
+- name: install mysql when
+  block:
+    - name: install
+      ansible.builtin.yum:
+        name: mysql
+        state: installed
+
+    - name: load schema
+      ansible.builtin.shell:
+        mysql -h 0.0.0.0 -uroot -pRoboShop@1 < /app/schema/shipping.sql
+
+  when: schema_type="mysql"

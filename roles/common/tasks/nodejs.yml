@@ -1,0 +1,32 @@
+- name: dis nodejs
+  ansible.builtin.shell:
+    dnf module disable nodejs -y
+
+- name: dis nodejs
+  ansible.builtin.shell:
+    dnf module enable nodejs:18 -y
+
+- name: dis nodejs
+  ansible.builtin.dnf:
+    name: nodejs
+    state: installed
+
+- name: import task pre
+  ansible.builtin.import_task:
+    name: common
+    tasks_from: app-prereq
+
+- name: npm dep
+  community.general.npm:
+    path: /app
+
+- name: import task pre
+  ansible.builtin.import_task:
+    name: common
+    tasks_from: schema-setup
+    when: schema_type
+
+- name: import task pre
+  ansible.builtin.import_task:
+    name: common
+    tasks_from: systemd-setup

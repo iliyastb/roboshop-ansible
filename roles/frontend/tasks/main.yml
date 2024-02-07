@@ -24,16 +24,12 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d
 
-- name: copy
-  ansible.builtin.copy:
-    src: nginx.service
-    dest: /etc/systemd/system
-
 - name: start nginx
   ansible.builtin.systemd:
     name: nginx
     state: restarted
     enabled: yes
+    daemon_reload: yes
 
 
 

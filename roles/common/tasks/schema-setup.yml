@@ -11,18 +11,18 @@
         name: mongodb-org-shell
         state: installed
 
-    - name: load schema
+    - name: load schema mongo
       ansible.builtin.shell:
         mongo --host mongodb.devtb.online </app/schema/{{component}}.js
 
 - name: install mysql when
   when: schema_type == "mysql"
   block:
-    - name: install
+    - name: install mysql
       ansible.builtin.yum:
         name: mysql
         state: installed
 
-    - name: load schema
+    - name: load schema mysql
       ansible.builtin.shell:
         mysql --host mysql.devtb.online -uroot -pRoboShop@1 < /app/schema/{{component}}.sql

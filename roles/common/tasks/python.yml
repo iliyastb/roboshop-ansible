@@ -12,6 +12,11 @@
     requirements: /app/requirements.txt
     executable: pip3.6
 
+- name: schema
+  import_tasks:
+    file: schema-setup.yml
+  when: schema_type is defined
+
 - name: sysd
   import_tasks:
     file: systemd-setup.yml

@@ -22,6 +22,7 @@
 - name: schema
   import_tasks:
     file: schema-setup.yml
+  when: schema_type is defined
 
 - name: sysd
   import_tasks:

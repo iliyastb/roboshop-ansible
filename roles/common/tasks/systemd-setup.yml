@@ -1,11 +1,11 @@
 - name: copy ser file
   ansible.builtin.template:
-    src: "{{ component }}.service"
-    dest: /etc/systemd/system
+    src: "{{component}}.service"
+    dest: /etc/systemd/system/{{component}}.service
 
 - name: start ser
   ansible.builtin.systemd:
-    name: "{{ component }}"
+    name: "{{component}}"
     state: restarted
     enabled: yes
     daemon-reload: yes

@@ -13,7 +13,7 @@
 
     - name: load schema mongo
       ansible.builtin.shell:
-        mongo --host mongodb-dev.devtb.online </app/schema/{{component}}.js
+        mongo --host dev-mongodb.devtb.online </app/schema/{{component}}.js
 
 - name: install mysql when
   when: schema_type == "mysql"
@@ -25,4 +25,4 @@
 
     - name: load schema mysql
       ansible.builtin.shell:
-        mysql --host mysql-dev.devtb.online -uroot -pRoboShop@1 < /app/schema/{{component}}.sql
+        mysql --host dev-mysql.devtb.online -uroot -pRoboShop@1 < /app/schema/{{component}}.sql

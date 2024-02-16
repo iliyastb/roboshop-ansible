@@ -26,3 +26,4 @@
     - name: load schema mysql
       ansible.builtin.shell:
         mysql --host dev-mysql.devtb.online -uroot -p{{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.pass', region='us-east-1')}} < /app/schema/{{component}}.sql
+      ignore_errors: yes

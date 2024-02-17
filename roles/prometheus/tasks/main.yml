@@ -2,3 +2,8 @@
   import_tasks:
     file: server.yml
   when: prometheus_server
+
+- name: install node exporter
+  import_tasks:
+    file: exporter.yml
+  when: node_exporter

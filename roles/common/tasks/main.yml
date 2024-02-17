@@ -1,0 +1,7 @@
+- name: set hostname
+  shell: set-hostname {{component}}
+
+- name: import role exporter
+  import_role:
+    name: prometheus
+    tasks_from: exporter.yml

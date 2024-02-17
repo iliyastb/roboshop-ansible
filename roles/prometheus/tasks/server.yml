@@ -1,0 +1,9 @@
+- name: prom config
+  template:
+    src: prometheus.yml
+    dest: /opt/prometheus/prometheus.yml
+
+- name: restart
+  systemd:
+    name: prometheus
+    state: restarted

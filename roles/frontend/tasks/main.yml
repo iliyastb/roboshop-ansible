@@ -1,8 +1,8 @@
 - name: install nginx
+  become: yes
   ansible.builtin.yum:
     name: nginx
     state: installed
-    become: yes
 
 - name: remove dir
   ansible.builtin.file:

@@ -2,6 +2,7 @@
   yum:
     name: maven
     state: installed
+    become: yes
 
 - name: import app pre
   import_tasks:

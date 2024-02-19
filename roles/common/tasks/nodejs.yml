@@ -10,6 +10,7 @@
   ansible.builtin.dnf:
     name: nodejs
     state: installed
+    become: yes
 
 - name: import task pre
   ansible.builtin.import_tasks:

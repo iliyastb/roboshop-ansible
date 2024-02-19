@@ -20,3 +20,19 @@
     state: restarted
     enabled: yes
     daemon_reload: yes
+
+- name: copy repo
+  copy:
+    src: grafana.repo
+    dest: /etc/yum.repos.d/grafana.repo
+
+- name: install grafana
+  yum:
+    name: grafana
+    state: installed
+
+- name: enable and start
+  systemd:
+    name: grafana
+    enabled: yes
+    state: restarted

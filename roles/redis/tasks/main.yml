@@ -8,7 +8,6 @@
   ansible.builtin.dnf:
     name: "@redis:remi-6.2"
     state: installed
-    become: yes
 
 - name: replace the ip
   ansible.builtin.replace:

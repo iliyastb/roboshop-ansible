@@ -10,7 +10,6 @@
       ansible.builtin.dnf:
         name: mongodb-org-shell
         state: installed
-        become: yes
 
     - name: load schema mongo
       ansible.builtin.shell:
@@ -23,7 +22,6 @@
       ansible.builtin.yum:
         name: mysql
         state: installed
-        become: yes
 
     - name: load schema mysql
       ansible.builtin.shell:

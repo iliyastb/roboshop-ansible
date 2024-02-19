@@ -1,7 +1,6 @@
 - yum:
     name: golang
     state: installed
-    become: yes
 
 - import_tasks:
     file: app-prereq.yml

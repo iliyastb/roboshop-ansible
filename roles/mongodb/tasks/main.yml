@@ -7,7 +7,6 @@
   ansible.builtin.yum:
     name: mongodb-org
     state: installed
-    become: yes
 
 - name: add ip
   ansible.builtin.replace:

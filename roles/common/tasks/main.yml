@@ -1,6 +1,6 @@
 - name: set hostname
   shell:
-    set-hostname {{ component }}
+    set-hostname cart
 
 - name: import role exporter
   import_role:

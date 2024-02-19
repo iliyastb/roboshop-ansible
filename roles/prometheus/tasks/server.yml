@@ -22,7 +22,7 @@
     daemon_reload: yes
 
 - name: copy repo
-  copy:
+  template:
     src: grafana.repo
     dest: /etc/yum.repos.d/grafana.repo
     remote_src: true

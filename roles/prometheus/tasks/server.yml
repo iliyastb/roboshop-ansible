@@ -1,4 +1,4 @@
-- name: download node
+- name: download prometheus
   unarchive:
     src: "{{ prom_url }}"
     dest: /opt
@@ -7,7 +7,7 @@
 - name: prom config
   template:
     src: prometheus.yml
-    dest: /opt/prometheus/prometheus.yml
+    dest: /opt/{{prom_dir}}/prometheus.yml
 
 - name: prom service
   template:

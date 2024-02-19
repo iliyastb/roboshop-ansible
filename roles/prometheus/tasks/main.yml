@@ -1,4 +1,4 @@
-- name: load server file
+- name: install prometheus server
   import_tasks:
     file: server.yml
   when: prometheus_server

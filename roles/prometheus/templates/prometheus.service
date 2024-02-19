@@ -5,7 +5,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=/opt/prometheus
+WorkingDirectory=/opt/{{prom_dir}}
 ExecStart=/opt/{{prom_dir}}/prometheus
 
 [Install]

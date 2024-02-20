@@ -21,4 +21,4 @@ scrape_configs:
 
     relabel_configs:
       - source_labels: [__meta_ec2_tag_Name]
-        target_label: name
+        target_label: "name"

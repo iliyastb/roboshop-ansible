@@ -5,4 +5,4 @@
 - name: import role exporter
   import_role:
     name: prometheus
-    tasks_from: exporter.yml
+    tasks_from: exporter

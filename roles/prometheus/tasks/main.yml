@@ -1,9 +1,14 @@
 - name: install prometheus server
   import_tasks:
-    file: server.yml
+    file: prom.yml
   when: prometheus_server
 
 - name: install node exporter
   import_tasks:
     file: exporter.yml
   when: node_exporter
+
+- name: install grafana
+  import_tasks:
+    file: grafana.yml
+  when: grafana

@@ -1,0 +1,22 @@
+- name: download prometheus
+  unarchive:
+    src: "{{ prom_url }}"
+    dest: /opt
+    remote_src: true
+
+- name: prom service
+  template:
+    src: prometheus.service
+    dest: /etc/systemd/system/prometheus.service
+
+- name: restart
+  systemd:
+    name: prometheus
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+
+- name: prom server configuration
+  template:
+    src: prometheus.yml
+    dest: /opt/{{prom_dir}}/prometheus.yml

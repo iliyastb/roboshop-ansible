@@ -1,0 +1,16 @@
+- name: copy repo
+  template:
+    src: grafana.repo
+    dest: /etc/yum.repos.d/grafana.repo
+    remote_src: true
+
+- name: install grafana
+  yum:
+    name: grafana
+    state: installed
+
+- name: enable and start
+  systemd:
+    name: grafana-server
+    enabled: yes
+    state: restarted

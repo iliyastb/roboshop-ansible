@@ -1,6 +1,11 @@
 components:
-  - cart
+  - nginx
   - catalogue
+  - user
+  - cart
+  - shipping
+  - payment
+  - dispatch
 
 alert_files:
   - alerts.yml

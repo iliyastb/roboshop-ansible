@@ -1,7 +1,7 @@
 groups:
   - name: roboshop
     rules:
-      - alert: ServerDown
+      - alert: Server Down
         expr: up < 1
         for: 30s
         labels:

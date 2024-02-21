@@ -1,10 +1,17 @@
 groups:
   - name: roboshop
     rules:
-      - alert: serverdown
+      - alert: ServerDown
         expr: up < 1
         for: 30s
         labels:
           severity: critical
         annotations:
-          summary: server down
+          summary: Server down
+      - alert: High cpu
+        expr: 100-(avg by(name)(rate(node_cpu_seconds_total{mode="idle"}[1m])*100)) > 80
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: High cpu

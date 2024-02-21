@@ -4,6 +4,16 @@
     dest: /opt
     remote_src: true
 
+- name: prom server configuration
+  template:
+    src: prometheus.yml
+    dest: /opt/{{prom_dir}}/prometheus.yml
+
+- name: alerts
+  template:
+    src: alerts.yml
+    dest: /opt/{{prom_dir}}/alerts.yml
+
 - name: prom service
   template:
     src: prometheus.service
@@ -15,13 +25,3 @@
     state: restarted
     enabled: yes
     daemon_reload: yes
-
-- name: prom server configuration
-  template:
-    src: prometheus.yml
-    dest: /opt/{{prom_dir}}/prometheus.yml
-
-- name: alerts
-  template:
-    src: alerts.yml
-    dest: /opt/{{prom_dir}}/alerts.yml

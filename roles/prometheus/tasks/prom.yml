@@ -13,9 +13,7 @@
   template:
     src: "{{item}}"
     dest: /opt/{{prom_dir}}/{{item}}
-  loop:
-    - alerts.yml
-    - service-alerts.yml
+  loop: "{{alert_files}}"
 
 - name: prom service
   template:

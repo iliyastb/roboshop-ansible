@@ -1,11 +1,11 @@
 components:
-  - nginx
-  - catalogue
-  - user
-  - cart
-  - shipping
-  - payment
-  - dispatch
+  - { name: "frontend", service: "nginx" }
+  - { name: "catalogue", service: "catalogue" }
+  - { name: "user", service: "user" }
+  - { name: "cart", service: "cart" }
+  - { name: "shipping", service: "shipping" }
+  - { name: "payment", service: "payment" }
+  - { name: "dispatch", service: "dispatch" }
 
 alert_files:
   - alerts.yml

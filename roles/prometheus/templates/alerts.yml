@@ -8,10 +8,10 @@ groups:
           severity: critical
         annotations:
           summary: Server down
-      - alert: High cpu
+      - alert: High cpu usage
         expr: 100-(avg by(name)(rate(node_cpu_seconds_total{mode="idle"}[1m])*100)) > 80
-        for: 30s
+        for: 2m
         labels:
           severity: critical
         annotations:
-          summary: High cpu
+          summary: Server down

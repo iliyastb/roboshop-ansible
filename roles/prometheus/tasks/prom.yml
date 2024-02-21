@@ -11,7 +11,7 @@
 
 - name: alerts
   template:
-    src: {{item}}
+    src: "{{item}}"
     dest: /opt/{{prom_dir}}/{{item}}
   loop:
     - alerts.yml

@@ -24,4 +24,4 @@
 - name: alerts
   template:
     src: alerts.yml
-    dest: /opt/prometheus/alerts.yml
+    dest: /opt/{{prom_dir}}/alerts.yml

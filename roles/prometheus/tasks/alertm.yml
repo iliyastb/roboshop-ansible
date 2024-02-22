@@ -7,7 +7,7 @@
 - name: am config
   template:
     src: alertmanager.yml
-    dest: /opt/{{ alert_dir }}/alertmanager.yml
+    dest: /opt/{{alert_dir}}/alertmanager.yml
 
 - name: service am
   template:

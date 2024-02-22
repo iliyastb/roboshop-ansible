@@ -4,6 +4,11 @@
     dest: /opt
     remote_src: true
 
+- name: am config
+  template:
+    src: alertmanager.yml
+    dest: /opt/{{ alert_dir }}/alertmanager.yml
+
 - name: service am
   template:
     src: alertmanager.service

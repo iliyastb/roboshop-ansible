@@ -4,12 +4,12 @@
     dest: /opt
     remote_src: true
 
-- name: copy ser
+- name: service node
   template:
     src: exporter.service
     dest: /etc/systemd/system/node_exporter.service
 
-- name: restart
+- name: start node
   systemd:
     name: node_exporter
     enabled: yes

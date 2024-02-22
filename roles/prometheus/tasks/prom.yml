@@ -9,18 +9,18 @@
     src: prometheus.yml
     dest: /opt/{{prom_dir}}/prometheus.yml
 
-- name: alerts
+- name: alerts p
   template:
     src: "{{item}}"
     dest: /opt/{{prom_dir}}/{{item}}
   loop: "{{alert_files}}"
 
-- name: prom service
+- name: service p
   template:
     src: prometheus.service
     dest: /etc/systemd/system/prometheus.service
 
-- name: restart
+- name: start p
   systemd:
     name: prometheus
     state: restarted

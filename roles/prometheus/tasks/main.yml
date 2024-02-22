@@ -12,3 +12,8 @@
   import_tasks:
     file: grafana.yml
   when: grafana
+
+- name: install grafana
+  import_tasks:
+    file: alertm.yml
+  when: alertm

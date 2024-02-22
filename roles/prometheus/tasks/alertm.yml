@@ -1,0 +1,17 @@
+- name: download am
+  unarchive:
+    src: "{{ alert_url }}"
+    dest: /opt
+    remote_src: true
+
+- name: service am
+  template:
+    src: alertmanager.service
+    dest: /etc/systemd/system/alertmanager.service
+
+- name: start am
+  systemd:
+    name: alertmanager
+    enabled: yes
+    state: restarted
+    daemon-reload: yes

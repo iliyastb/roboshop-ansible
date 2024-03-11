@@ -1,0 +1,4 @@
+- name: filebeat
+  import_tasks:
+    file: beats.yml
+  when: beats

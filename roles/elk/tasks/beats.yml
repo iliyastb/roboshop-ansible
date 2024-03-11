@@ -1,0 +1,17 @@
+- name: copy repo
+  template:
+    src: elastic.repo
+    dest: /etc/yum.repos.d/
+    remote_src: true
+
+- name: install fb
+  yum:
+    name: filebeat
+    state: installed
+
+- name: enable and start
+  systemd:
+    name: filebeat
+    state: restarted
+    enabled: yes
+    daemon-reload: yes

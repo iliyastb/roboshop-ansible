@@ -2,7 +2,6 @@
   template:
     src: elastic.repo
     dest: /etc/yum.repos.d/
-    remote_src: true
 
 - name: install fb
   yum:

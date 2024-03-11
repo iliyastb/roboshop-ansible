@@ -1,4 +1,9 @@
 - name: filebeat
   import_tasks:
-    file: beats.yml
-  when: beats
+    file: filebeat.yml
+  when: filebeat
+
+- name: filebeat
+  import_tasks:
+    file: logstash.yml
+  when: elk

@@ -1,0 +1,14 @@
+- name: copy logstash
+  template:
+    src: logstash.conf
+    dest: /etc/logstash/conf.d/
+
+- name: restart logstash
+  systemd:
+    name: logstash
+    state: restarted
+    enabled: yes
+    daemon-reload: yes
+
+- name: netstat
+  shell: sleep 60 ; netstat -lntp

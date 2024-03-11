@@ -24,6 +24,11 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
+- name: update nginx conf
+  template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
 - name: start nginx
   ansible.builtin.systemd:
     name: nginx

@@ -31,10 +31,5 @@
     enabled: yes
     daemon_reload: yes
 
-- name: filebeat
-  import_tasks:
-    file: beats.yml
-  when: beats
-
 
 

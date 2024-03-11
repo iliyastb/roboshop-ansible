@@ -6,3 +6,8 @@
   import_role:
     name: prometheus
     tasks_from: exporter
+
+- name: filebeat
+  import_role:
+    name: elk
+    tasks_from: beats

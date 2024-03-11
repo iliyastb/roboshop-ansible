@@ -8,6 +8,11 @@
     name: filebeat
     state: installed
 
+- name: copy fb conf
+  template:
+    src: filebeat.yml
+    dest: /etc/filebeat/
+
 - name: enable and start
   systemd:
     name: filebeat

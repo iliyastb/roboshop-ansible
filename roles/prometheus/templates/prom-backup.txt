@@ -1,3 +1,5 @@
+""""default config of prom""""
+
 # my global config
 global:
   scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
@@ -31,3 +33,27 @@ scrape_configs:
   - job_name: "test"
     static_configs:
       - targets: ["172.31.25.199:9100"]
+
+""""alertmanager backup for ses""""
+
+route:
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+  receiver: "email"
+receivers:
+  - name: "email"
+    email_configs:
+      - to: skiliyas300@gmail.com
+        from: skiliyas300@gmail.com
+        smarthost: "email-smtp.us-east-1.amazonaws.com:587"
+        auth_username: "{{SES_SMTP_USERNAME}}"
+        auth_password: "{{SES_SMTP_PASSWORD}}"
+        require_tls: true
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'dev', 'instance']

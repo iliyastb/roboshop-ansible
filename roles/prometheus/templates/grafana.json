@@ -25,7 +25,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+        "uid": "edfk1oe5pqpdsb"
       },
       "fieldConfig": {
         "defaults": {
@@ -97,7 +97,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+            "uid": "edfk1oe5pqpdsb"
           },
           "editorMode": "code",
           "expr": "up",
@@ -114,7 +114,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+        "uid": "edfk1oe5pqpdsb"
       },
       "fieldConfig": {
         "defaults": {
@@ -194,7 +194,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+            "uid": "edfk1oe5pqpdsb"
           },
           "editorMode": "code",
           "expr": "100-(avg by(name)(rate(node_cpu_seconds_total{mode=\"idle\"}[1m])*100))",
@@ -210,7 +210,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+        "uid": "edfk1oe5pqpdsb"
       },
       "fieldConfig": {
         "defaults": {
@@ -290,7 +290,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+            "uid": "edfk1oe5pqpdsb"
           },
           "editorMode": "code",
           "expr": "((node_memory_Buffers_bytes + node_memory_Cached_bytes + node_memory_MemFree_bytes) / node_memory_MemTotal_bytes) * 100",
@@ -307,7 +307,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+        "uid": "edfk1oe5pqpdsb"
       },
       "fieldConfig": {
         "defaults": {
@@ -377,7 +377,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+            "uid": "edfk1oe5pqpdsb"
           },
           "editorMode": "code",
           "expr": "node_systemd_unit_state{exported_name=\"nginx.service\",state=\"active\"}",
@@ -389,7 +389,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+            "uid": "edfk1oe5pqpdsb"
           },
           "editorMode": "code",
           "expr": "node_systemd_unit_state{exported_name=\"cart.service\",state=\"active\"}",
@@ -402,7 +402,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+            "uid": "edfk1oe5pqpdsb"
           },
           "editorMode": "code",
           "expr": "node_systemd_unit_state{exported_name=\"user.service\",state=\"active\"}",
@@ -415,7 +415,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+            "uid": "edfk1oe5pqpdsb"
           },
           "editorMode": "code",
           "expr": "node_systemd_unit_state{exported_name=\"catalogue.service\",state=\"active\"}",
@@ -428,7 +428,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+            "uid": "edfk1oe5pqpdsb"
           },
           "editorMode": "code",
           "expr": "node_systemd_unit_state{exported_name=\"shipping.service\",state=\"active\"}",
@@ -441,7 +441,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+            "uid": "edfk1oe5pqpdsb"
           },
           "editorMode": "code",
           "expr": "node_systemd_unit_state{exported_name=\"payment.service\",state=\"active\"}",
@@ -454,7 +454,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "f286d913-9bb3-4ca9-b1c1-8078cac8b1fd"
+            "uid": "edfk1oe5pqpdsb"
           },
           "editorMode": "code",
           "expr": "node_systemd_unit_state{exported_name=\"dispatch.service\",state=\"active\"}",

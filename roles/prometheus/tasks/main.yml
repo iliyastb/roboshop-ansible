@@ -2,22 +2,22 @@
   shell:
     set-hostname PROM
 
-- name: install prometheus server
-  import_tasks:
-    file: prom.yml
-  when: prometheus_server
-
 - name: install node exporter
   import_tasks:
     file: exporter.yml
   when: node_exporter
 
+- name: install prometheus server
+  import_tasks:
+    file: prom.yml
+  when: prom
+
 - name: install grafana
   import_tasks:
     file: grafana.yml
-  when: grafana
+  when: prom
 
 - name: install grafana
   import_tasks:
     file: alertm.yml
-  when: alertm
+  when: prom

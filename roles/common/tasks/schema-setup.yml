@@ -11,9 +11,16 @@
         name: mongodb-org-shell
         state: installed
 
+    - name: download mongodb pem file
+      get_url:
+        url: https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
+        dest: /app/rds-combined-ca-bundle.pem
+
     - name: load schema mongo
+#      ansible.builtin.shell:
+#        mongo --host dev-mongodb.devtb.online </app/schema/{{component}}.js
       ansible.builtin.shell:
-        mongo --host dev-mongodb.devtb.online </app/schema/{{component}}.js
+        mongo --ssl --host cluster link:27017 --sslCAFile /app/rds-combined-ca-bundle.pem --username admin1 --password <insert password ></app/schema/{{component}}.js
 
 - name: install mysql when
   when: schema_type == "mysql"

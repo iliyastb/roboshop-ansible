@@ -13,7 +13,7 @@
 
     - name: download mongodb pem file
       get_url:
-        url: https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
+        url: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
         dest: /app/rds-combined-ca-bundle.pem
 
     - name: load schema mongo

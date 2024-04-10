@@ -1,0 +1,9 @@
+Traffic
+metric = count of records
+metric = count of records with breakdown filters http_path:"//api/payment" of each node
+
+Latency
+line = last value of response_time
+
+Errors
+line = count of records with filter http_status > 399

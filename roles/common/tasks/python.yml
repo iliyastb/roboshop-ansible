@@ -7,10 +7,10 @@
   import_tasks:
     file: app-prereq.yml
 
-#- name: dependencies
-#  pip:
-#    requirements: /app/requirements.txt
-#    executable: pip3.6
+- name: dependencies
+  pip:
+    requirements: /app/requirements.txt
+    executable: pip3.6
 
 - name: schema
   import_tasks:

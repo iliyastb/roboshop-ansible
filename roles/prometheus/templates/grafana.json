@@ -66,7 +66,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 5,
+        "h": 8,
         "w": 12,
         "x": 0,
         "y": 0
@@ -151,7 +151,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 5,
+        "h": 8,
         "w": 12,
         "x": 12,
         "y": 0
@@ -330,7 +330,7 @@
         "h": 9,
         "w": 10,
         "x": 0,
-        "y": 5
+        "y": 8
       },
       "id": 2,
       "options": {
@@ -422,7 +422,7 @@
         "h": 12,
         "w": 14,
         "x": 10,
-        "y": 5
+        "y": 8
       },
       "id": 3,
       "options": {
@@ -470,6 +470,6 @@
   "timezone": "",
   "title": "roboshop",
   "uid": "cf749d04-0212-4c44-ad7b-7a5ddf906f1a",
-  "version": 1,
+  "version": 3,
   "weekStart": ""
 }

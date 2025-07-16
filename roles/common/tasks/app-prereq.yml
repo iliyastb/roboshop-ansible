@@ -12,8 +12,16 @@
     path: /app
     state: directory
 
+## downloading from s3 ##
+#- name: download extract
+#  ansible.builtin.unarchive:
+#    src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip
+#    dest: /app
+#    remote_src: yes
+
+## downloading from the nexus ##
 - name: download extract
   ansible.builtin.unarchive:
-    src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip
+    src: http://admin:admin@172.31.30.104:8081/repository/{{component}}/{{component}}-{{app_version}}.zip
     dest: /app
     remote_src: yes

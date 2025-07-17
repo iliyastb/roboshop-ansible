@@ -15,9 +15,9 @@
   ansible.builtin.import_tasks:
     file: app-prereq.yml
 
-- name: npm dep
-  community.general.npm:
-    path: /app
+#- name: npm dep
+#  community.general.npm:
+#    path: /app
 
 - name: import task sche
   ansible.builtin.import_tasks:
